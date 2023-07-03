@@ -1,0 +1,30 @@
+{
+  "projects": [
+    {
+      "date": "2017 - 2018",
+      "title": "St. Patrick's School",
+      "course": "S.S.C."
+    },
+    {
+      "date": "25/02/2023 - 25/03/2023",
+      "title": "Cascode",
+      "course": "Web Development"
+    },
+
+    {
+      "date": "2019 - 2020",
+      "title": "St. Vincent's College",
+      "course": "H.S.C."
+    },
+    {
+      "date": "05/03/2023 - 05/04/2023",
+      "title": "SYNC Intern",
+      "course": "Software Development"
+    },
+    {
+      "date": "2021 - 2024",
+      "title": "SAE, Kondhawa",
+      "course": "BTECH in Computer Engineering"
+    }
+  ]
+}

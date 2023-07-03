@@ -1,0 +1,39 @@
+{
+    "projects": [
+        {
+            "title": "Netflix Clone",
+            "description": "This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write. This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write",
+            "imageSrc": "https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233__340.jpg",
+            "visitURL":"https://react-video-app-eight.vercel.app",
+            "gitURL":"https://github.com/Aaryan-02"
+        },
+        {
+            "title": "Crypto Tracker",
+            "description": "This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write. This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write",
+            "imageSrc": "https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233__340.jpg",
+            "visitURL":"https://react-video-app-eight.vercel.app",
+            "gitURL":"https://github.com/Aaryan-02"
+        },
+        {
+            "title": "News App",
+            "description": "This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write. This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write",
+            "imageSrc": "https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233__340.jpg",
+            "visitURL":"https://react-video-app-eight.vercel.app",
+            "gitURL":"https://github.com/Aaryan-02"
+        },
+        {
+            "title": "Notes App",
+            "description": "This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write. This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write",
+            "imageSrc": "https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233__340.jpg",
+            "visitURL":"https://react-video-app-eight.vercel.app",
+            "gitURL":"https://github.com/Aaryan-02"
+        },
+        {
+            "title": "TextUtils",
+            "description": "This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write. This is the sample description about the project details. The more details the more details and evenually more details because I don't have anything to write",
+            "imageSrc": "https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233__340.jpg",
+            "visitURL":"https://react-video-app-eight.vercel.app",
+            "gitURL":"https://github.com/Aaryan-02"
+        }
+    ]
+}
