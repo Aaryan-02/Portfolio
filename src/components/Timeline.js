@@ -1,11 +1,11 @@
 import React from 'react';
-import data from "../assets/data.json";
+import { aboutData } from '../assets/data.js';
 
 const Timeline = () => {
     return (
         <div id='timeline'>
             <div className="timelineBox">
-                {data.projects.map((item, index) => (
+                {aboutData.map((item, index) => (
                     <TimelineItem heading={item.title} text={item.date} course={item.course} index={index} key={item.title} />
                 ))}
             </div>
@@ -23,4 +23,4 @@ const TimelineItem = ({ heading, text, course, index }) => (
     </div>
 )
 
-export default Timeline
+export default Timeline;
