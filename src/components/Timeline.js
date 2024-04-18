@@ -1,15 +1,21 @@
 import React from 'react';
 import { aboutData } from '../assets/data.js';
+import { motion } from 'framer-motion';
+import { slideInFromRight } from './Animations.js';
 
 const Timeline = () => {
     return (
-        <div id='timeline'>
+        <motion.div id='timeline' variants={slideInFromRight(40, 0.8)} initial="initial"
+            whileInView="animate"
+            viewport={{
+                once: true,
+            }}>
             <div className="timelineBox">
                 {aboutData.map((item, index) => (
                     <TimelineItem heading={item.title} text={item.date} course={item.course} index={index} key={item.title} />
                 ))}
             </div>
-        </div>
+        </motion.div>
     )
 }
 
@@ -23,4 +29,4 @@ const TimelineItem = ({ heading, text, course, index }) => (
     </div>
 )
 
-export default Timeline;
+export default Timeline 
