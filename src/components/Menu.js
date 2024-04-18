@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Hamburger2 from "./Hamburger";
 import { Sling as Hamburger } from 'hamburger-react';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import { motion } from "framer-motion";
+import { slideInFromTop } from "./Animations";
 
 const Header = () => {
   // State of our Menu
@@ -23,7 +23,6 @@ const Header = () => {
   useEffect(() => {
     //Listening for page changes.
     setState({ clicked: false, menuName: false });
-    Aos.init({ duration: 2000})
   }, [location]);
 
   // Toggle menu
@@ -62,8 +61,8 @@ const Header = () => {
   };
 
   return (
-    <header>
-      <div className="inner-header" data-aos="fade-in">
+    <motion.header variants={slideInFromTop(-100, 0.5)} initial="initial" animate="animate">
+      <div className="inner-header" >
         <div className="logo">
           <Link to="/">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 210" className='sidebar__logo'>
@@ -81,7 +80,7 @@ const Header = () => {
       </div>
       {/* State passed as prop which will allow use to use state of Header in Hamburger */}
       <Hamburger2 state={state} />
-    </header>
+    </motion.header>
   );
 };
 
