@@ -6,20 +6,17 @@ import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Blast from './Blast';
-import Cursor from './Cursor';
+import { motion } from 'framer-motion';
+import { slideInFromLeft, imgVariant } from './Animations.js';
+// import Cursor from './Cursor';
 
 import Particle from './ParticlesBackground';
 import { FaFileDownload } from 'react-icons/fa';
 import resume from "../assets/Documents/Resume.pdf";
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+
 
 
 const Home = () => {
-
-  useEffect(() => {
-    Aos.init({ duration: 2000, once: true})
-  }, []);
 
   const nameArray = ['a', 'r', 'y', 'a', 'n', ' ', 'P', 'i', 'n', 't', 'o'];
 
@@ -32,12 +29,12 @@ const Home = () => {
   }, [])
   return (
     <>
-      <Cursor />
+      {/* <Cursor /> */}
       <Particle />
       <div id="home">
         <section>
           <div className="info">
-            <div className='hi'>
+            <motion.div className='hi' variants={slideInFromLeft(-100, 0.5)} initial="initial" animate="animate">
               <span className={letterClass}>H</span>
               <span className={`${letterClass} _12`}>e</span>
               <span className={`${letterClass} _13`}>l</span>
@@ -47,8 +44,8 @@ const Home = () => {
               <span className={`${letterClass} _17`}>I</span>
               <span className={`${letterClass} _18`}>'</span>
               <span className={`${letterClass} _19`}>m</span>
-            </div>
-            <div className="name">
+            </motion.div>
+            <motion.div className="name" variants={slideInFromLeft(-100, 0.5)} initial="initial" animate="animate">
               <span className="logo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 210" className='sidebar__logo2'>
                   <path className='animate-logo-1' fill="#e31b6d" d="M171 209.194C159.166 128.482 123.848 68.1928 79.4896 55.1237C39.9765 68.9721 10.4845 132.104 0 210C24.4381 165.9 53.1053 124.32 80.4167 105.975C115.428 124.605 139.927 163.164 171 209.194L171 209.194Z" />
@@ -56,21 +53,24 @@ const Home = () => {
                     fill='cyan' />
                 </svg>
               </span>
-              <span><Blast letterClass={letterClass} arrayStr={nameArray} indexLetter={18} /></span></div>
-            <Typewriter options={{
-              strings: ["Software Developer", "Web Developer"],
-              autoStart: true,
-              loop: true,
-              cursor: "",
-              wrapperClassName: "typewriterpara"
-            }} />
-            <div className='downloadBtn'>
+              <span><Blast letterClass={letterClass} arrayStr={nameArray} indexLetter={18} /></span>
+            </motion.div>
+            <motion.div variants={slideInFromLeft(-100, 1.1)} initial="initial" animate="animate">
+              <Typewriter options={{
+                strings: ["Software Developer", "Web Developer"],
+                autoStart: true,
+                loop: true,
+                cursor: "",
+                wrapperClassName: "typewriterpara"
+              }} />
+            </motion.div>
+            <motion.div className='downloadBtn' variants={slideInFromLeft(-100, 1.2)} initial="initial" animate="animate">
               <a href={resume} download="resume" >Download CV <span> <FaFileDownload /></span></a>
-            </div>
+            </motion.div>
           </div>
-          <div className="pic" data-aos="zoom-in">
-            <img src={me} alt="Profile" id="myImg"/>
-          </div>
+          <motion.div className="pic" variants={imgVariant(500)} initial="initial" animate="animate">
+            <img src={me} alt="Profile" id="myImg" />
+          </motion.div>
         </section>
       </div>
       <About />
