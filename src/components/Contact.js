@@ -4,14 +4,10 @@ import Map from './Map';
 import Blast from "./Blast";
 import emailjs from "@emailjs/browser";
 import Footer from './Footer';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import { motion } from 'framer-motion';
+import {slideInFromLeft, slideInFromRight } from './Animations.js';
 
 const Contact = () => {
-
-  useEffect(() => {
-    Aos.init({ duration: 2000, once: true})
-  }, []);
 
   const [letterClass, setLetterClass] = useState("text-animate");
   useEffect(() => {
@@ -37,22 +33,22 @@ const Contact = () => {
   const form = useRef(null);
 
   const setError = (inputRef) => {
-    if(inputRef.current.parentElement.classList.contains("success")){
+    if (inputRef.current.parentElement.classList.contains("success")) {
       inputRef.current.parentElement.classList.remove("success")
-    }else{
+    } else {
       inputRef.current.parentElement.classList.add("error")
     }
   }
 
   const setSuccess = (inputRef) => {
-    if(inputRef.current.parentElement.classList.contains("error")){
+    if (inputRef.current.parentElement.classList.contains("error")) {
       inputRef.current.parentElement.classList.remove("error")
-    }else{
+    } else {
       inputRef.current.parentElement.classList.add("success")
     }
   }
 
-  const showMessage = (message, updateColor) =>{
+  const showMessage = (message, updateColor) => {
     const divContent = document.createElement("div")
     divContent.textContent = message;
     divContent.classList.add("div-content")
@@ -61,10 +57,10 @@ const Contact = () => {
 
     MessageRef.current.style.transform = `translateX(${0}%)`;
 
-    setTimeout(()=>{
+    setTimeout(() => {
       divContent.classList.add("hide");
       //transitionend event is added to eliminate the divContent messages to crash the website from multiple divContent messages
-      divContent.addEventListener('transitionend',()=>{
+      divContent.addEventListener('transitionend', () => {
         divContent.remove();
       })
 
@@ -101,55 +97,73 @@ const Contact = () => {
     } else if (email && !message) {
       setError(TextAreaRef)
       showMessage('Leave a message pls!')
-      
+
     } else if (email && message) {
-      emailjs.sendForm('service_yvug0d6','template_sbtxoua', form.current, 'ec7Wv8G7DPZpzlL5C')
-      .then((result)=> {
-        setSuccess(emailRef)
-        setSuccess(TextAreaRef)
-        showMessage('Message sent successfully', 'green')
-  
-        setValidInput({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
+      emailjs.sendForm('service_yvug0d6', 'template_sbtxoua', form.current, 'ec7Wv8G7DPZpzlL5C')
+        .then((result) => {
+          setSuccess(emailRef)
+          setSuccess(TextAreaRef)
+          showMessage('Message sent successfully', 'green')
+
+          setValidInput({
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+          });
+        })
+        .catch((error) => {
+          console.log(error);
         });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
     }
   }
   // An onChange event is triggered when values are entered in the input. This fires a function handleChange(), that is used to set a new state for the input.
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setValidInput((preValue) => {
-      return { ...preValue, [name]: value }
+    setValidInput((prevValue) => {
+      return { ...prevValue, [name]: value }
     })
   }
 
   return (
     <>
-      <section className='contact-section'>
+      <section className='contact-section' >
         <form ref={form} className='contact-form' onSubmit={onSubmit}>
           <div>
-            <h2 className='contact__heading' data-aos="fade-right">
+            <motion.h2 className='contact__heading' variants={slideInFromLeft(-40, 0.5)}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+            >
               <Blast letterClass={letterClass} arrayStr={["C", "o", "n", "t", "a", "c", "t", "  ", "m", "e"]} indexLetter={12} />
-            </h2>
-            <div data-aos="fade-right">
+            </motion.h2>
+            <motion.div variants={slideInFromLeft(-40, 0.8)}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+            >
               <p>Hey There</p>
               <p className='contact-para'>Got a question or proposal, or just want to say hello? Go ahead</p>
-            </div>
+            </motion.div>
           </div>
-          <div className='entireForm' data-aos="fade-up">  
+          <motion.div className='entireForm' variants={slideInFromLeft(-40, 0.6)}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+          >
             <div className='input-wrapper'>
               <div className="form-input-group">
                 <input type="text" name="name" placeholder="Name" value={validInput.name} autoComplete='off' onChange={handleChange} />
                 <span></span>
               </div>
               <div className="form-input-group">
-                <input type="text" name="email" placeholder="Email" value={validInput.email} autoComplete='off' onChange={handleChange} ref={emailRef}/>
+                <input type="text" name="email" placeholder="Email" value={validInput.email} autoComplete='off' onChange={handleChange} ref={emailRef} />
                 <span></span>
                 <BsExclamationLg className='exclamation' />
                 <BsPatchCheckFill className='checkCircle' />
@@ -167,14 +181,20 @@ const Contact = () => {
               <BsExclamationLg className='exclamation' />
               <BsPatchCheckFill className='checkCircle' />
             </div>
-          </div>
-          <div className='submit-button' data-aos="zoom-in">
-              <button type='submit'>Send Message</button>
+          </motion.div>
+          <div className='submit-button'>
+            <button type='submit'>Send Message</button>
           </div>
         </form>
-        <div data-aos="zoom-in-up">
-          <Map/>
-        </div>
+        <motion.div variants={slideInFromRight(50, 0.6)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+        >
+          <Map />
+        </motion.div>
         <div className='message' ref={MessageRef}></div>
       </section>
       <Footer />
