@@ -161,21 +161,22 @@
     justify-content: flex-end;
     padding: 20px;
     align-items: center; /* Align items vertically */
-    width: 86vw;
+    width: 80vw;
     margin: auto;
-}
+    margin-bottom: 4rem;
 
-.wrapper {
-    max-width: 30vw;
-    overflow: hidden;
-    color: #e31b6d;
-    font-weight: bold;
-    background-color: aqua;
-    margin-right: 25px; /* Add margin to create space between wrapper and arrow */
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    animation: pulse 2s ease infinite; /* Add pulsating animation */
+    .wrapper {
+        max-width: 30vw;
+        overflow: hidden;
+        color: #e31b6d;
+        font-weight: bold;
+        background-color: aqua;
+        margin-right: 25px; /* Add margin to create space between wrapper and arrow */
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        animation: pulse 2s ease infinite; /* Add pulsating animation */
+    }
 }
 
 .marquee {
