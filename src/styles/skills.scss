@@ -1,0 +1,239 @@
+// :root{
+// }
+.skillsSection {
+    background-color: rgb(20, 20, 20);
+    height: 100%;
+    padding: 2.5rem;
+    padding-top: 0;
+}
+
+#skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 60%;
+    padding: 1rem;
+
+    h5 {
+        font-size: 1.6rem;
+        text-shadow: 0.1rem 0.1rem 2px white;
+        margin-bottom: 0.7rem;
+    }
+}
+
+.skill1,
+.skill2,
+.skill3,
+.skill4,
+.skill5,
+.skill6,
+.skill7,
+.skill8,
+.skill9,
+.skill10 {
+    text-align: center;
+    width: 11.5rem;
+    height: 12rem;
+    margin: 2.33rem;
+    box-shadow: rgb(38, 57, 77) 2px 3px 22px 8px;
+    // border: 0.1rem solid gray;
+    background-color: #242424;
+    --border-size: 3px;
+    --border-angle: 0turn;
+    background-image: conic-gradient(from var(--border-angle), #213, #112 50%, #213),conic-gradient(from var(--border-angle), transparent 20%, cyan, #e31b6d);
+    background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation: bg-spin 3s linear infinite;
+
+    @keyframes bg-spin {
+        to {
+            --border-angle: 1turn;
+        }
+    }
+
+    &:hover {
+        animation-play-state: paused;
+    }
+    transition: all 0.4s ease-in-out;
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+.skill1 h5 {
+    color: rgb(48 120 238);
+}
+
+.skill2 h5 {
+    color: rgb(245, 68, 4);
+}
+
+.skill3 h5 {
+    color: rgb(61, 130, 244);
+}
+
+.skill4 h5 {
+    color: rgb(245, 171, 4);
+}
+
+.skill5 h5 {
+    color: rgb(4, 189, 245);
+}
+
+.skill6 h5 {
+    color: #0cbb0c;
+}
+
+.skill7 h5 {
+    color: rgb(38, 131, 140);
+}
+
+.skill8 h5 {
+    color: rgb(141, 4, 245);
+}
+
+.skill9 h5 {
+    color: rgb(255, 20, 147);
+}
+
+.skill10 h4 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #0000006e;
+    text-shadow: 0.1rem 0.1rem 2px white;
+}
+
+// .skillset:hover {
+//     -moz-transform: scale(1,1) rotateY(360deg);
+//     -webkit-transform: scale(1,1) rotateY(360deg);
+//     -o-transform: scale(1,1) rotateY(360deg);
+//     -ms-transform: scale(1,1) rotateY(360deg);
+//     transform: scale(1,1) rotateY(360deg);
+//     transition: 3s ease;
+//     animation-iteration-count: infinite;
+//     box-shadow: rgba(245, 4, 85, 0.518) 0px 54px 55px, rgba(245, 4, 85, 0.518) 0px -12px 30px, rgba(245, 4, 85, 0.518) 0px 4px 6px, rgba(245, 4, 85, 0.518) 0px 12px 13px, rgba(245, 4, 85, 0.518) 0px -3px 5px;
+// }
+.skill1:hover {
+    // -moz-transform: scale(1,1) rotateY(360deg);
+    // -webkit-transform: scale(1,1) rotateY(360deg);
+    // -o-transform: scale(1,1) rotateY(360deg);
+    // -ms-transform: scale(1,1) rotateY(360deg);
+    // transform: scale(1,1) rotateY(360deg);
+    // transition: 3s ease;
+    // animation-iteration-count:
+    box-shadow: rgba(4, 96, 245, 0.518) 0px 54px 55px, rgba(4, 96, 245, 0.518) 0px -12px 30px, rgba(4, 96, 245, 0.518) 0px 4px 6px, rgba(4, 96, 245, 0.518) 0px 12px 13px, rgba(4, 96, 245, 0.518) 0px -3px 5px;
+}
+
+.skill2:hover {
+    // -moz-transform: scale(1,1) rotateY(360deg);
+    // -webkit-transform: scale(1,1) rotateY(360deg);
+    // -o-transform: scale(1,1) rotateY(360deg);
+    // -ms-transform: scale(1,1) rotateY(360deg);
+    // transform: scale(1,1) rotateY(360deg);
+    // transition: 3s ease;
+    // animation-iteration-count: infinite;
+    box-shadow: rgba(245, 68, 4, 0.518) 0px 54px 55px, rgba(245, 68, 4, 0.518) 0px -12px 30px, rgba(245, 68, 4, 0.518) 0px 4px 6px, rgba(245, 68, 4, 0.518) 0px 12px 13px, rgba(245, 68, 4, 0.518) 0px -3px 5px;
+}
+
+.skill3:hover {
+    // -moz-transform: scale(1,1) rotateY(360deg);
+    // -webkit-transform: scale(1,1) rotateY(360deg);
+    // -o-transform: scale(1,1) rotateY(360deg);
+    // -ms-transform: scale(1,1) rotateY(360deg);
+    // transform: scale(1,1) rotateY(360deg);
+    // transition: 3s ease;
+    // animation-iteration-count: infinite;
+    box-shadow: rgba(4, 108, 245, 0.518) 0px 54px 55px, rgba(4, 108, 245, 0.518) 0px -12px 30px, rgba(4, 108, 245, 0.518) 0px 4px 6px, rgba(4, 108, 245, 0.518) 0px 12px 13px, rgba(4, 108, 245, 0.518) 0px -3px 5px;
+}
+
+.skill4:hover {
+    // -moz-transform: scale(1,1) rotateY(360deg);
+    // -webkit-transform: scale(1,1) rotateY(360deg);
+    // -o-transform: scale(1,1) rotateY(360deg);
+    // -ms-transform: scale(1,1) rotateY(360deg);
+    // transform: scale(1,1) rotateY(360deg);
+    // transition: 3s ease;
+    // animation-iteration-count: infinite;
+    box-shadow: rgba(245, 205, 4, 0.518) 0px 54px 55px, rgba(245, 205, 4, 0.518) 0px -12px 30px, rgba(245, 205, 4, 0.518) 0px 4px 6px, rgba(245, 205, 4, 0.518) 0px 12px 13px, rgba(245, 205, 4, 0.518) 0px -3px 5px;
+}
+
+.skill5:hover {
+    // -moz-transform: scale(1,1) rotateY(360deg);
+    // -webkit-transform: scale(1,1) rotateY(360deg);
+    // -o-transform: scale(1,1) rotateY(360deg);
+    // -ms-transform: scale(1,1) rotateY(360deg);
+    // transform: scale(1,1) rotateY(360deg);
+    // transition: 3s ease;
+    // animation-iteration-count: infinite;
+    box-shadow: rgba(4, 189, 245, 0.518) 0px 54px 55px, rgba(4, 189, 245, 0.518) 0px -12px 30px, rgba(4, 189, 245, 0.518) 0px 4px 6px, rgba(4, 189, 245, 0.518) 0px 12px 13px, rgba(4, 189, 245, 0.518) 0px -3px 5px;
+}
+
+.skill6:hover {
+    // -moz-transform: scale(1,1) rotateY(360deg);
+    // -webkit-transform: scale(1,1) rotateY(360deg);
+    // -o-transform: scale(1,1) rotateY(360deg);
+    // -ms-transform: scale(1,1) rotateY(360deg);
+    // transform: scale(1,1) rotateY(360deg);
+    // transition: 3s ease;
+    // animation-iteration-count: infinite;
+    box-shadow: rgba(16, 245, 4, 0.518) 0px 54px 55px, rgba(16, 245, 4, 0.518) 0px -12px 30px, rgba(16, 245, 4, 0.518) 0px 4px 6px, rgba(16, 245, 4, 0.518) 0px 12px 13px, rgba(16, 245, 4, 0.518) 0px -3px 5px;
+}
+
+.skill7:hover {
+    // -moz-transform: scale(1,1) rotateY(360deg);
+    // -webkit-transform: scale(1,1) rotateY(360deg);
+    // -o-transform: scale(1,1) rotateY(360deg);
+    // -ms-transform: scale(1,1) rotateY(360deg);
+    // transform: scale(1,1) rotateY(360deg);
+    // transition: 3s ease;
+    // animation-iteration-count: infinite;
+    box-shadow: rgba(1, 234, 255, 0.518) 0px 54px 55px, rgba(1, 234, 255, 0.518) 0px -12px 30px, rgba(1, 234, 255, 0.518) 0px 4px 6px, rgba(1, 234, 255, 0.518) 0px 12px 13px, rgba(1, 234, 255, 0.518) 0px -3px 5px;
+}
+
+.skill8:hover {
+    // -moz-transform: scale(1,1) rotateY(360deg);
+    // -webkit-transform: scale(1,1) rotateY(360deg);
+    // -o-transform: scale(1,1) rotateY(360deg);
+    // -ms-transform: scale(1,1) rotateY(360deg);
+    // transform: scale(1,1) rotateY(360deg);
+    // transition: 3s ease;
+    // animation-iteration-count: infinite;
+    box-shadow: rgba(141, 4, 245, 0.518) 0px 54px 55px, rgba(141, 4, 245, 0.518) 0px -12px 30px, rgba(141, 4, 245, 0.518) 0px 4px 6px, rgba(141, 4, 245, 0.518) 0px 12px 13px, rgba(141, 4, 245, 0.518) 0px -3px 5px;
+}
+
+.skill9:hover {
+    // -moz-transform: scale(1,1) rotateY(360deg);
+    // -webkit-transform: scale(1,1) rotateY(360deg);
+    // -o-transform: scale(1,1) rotateY(360deg);
+    // -ms-transform: scale(1,1) rotateY(360deg);
+    // transform: scale(1,1) rotateY(360deg);
+    // transition: 3s ease;
+    // animation-iteration-count: infinite;
+    box-shadow: rgba(255, 20, 147, 0.518) 0px 54px 55px, rgba(255, 20, 147, 0.518) 0px -12px 30px, rgba(255, 20, 147, 0.518) 0px 4px 6px, rgba(255, 20, 147, 0.518) 0px 12px 13px, rgba(255, 20, 147, 0.518) 0px -3px 5px;
+}
+
+.skill10:hover {
+    // -moz-transform: scale(1,1) rotateY(360deg);
+    // -webkit-transform: scale(1,1) rotateY(360deg);
+    // -o-transform: scale(1,1) rotateY(360deg);
+    // -ms-transform: scale(1,1) rotateY(360deg);
+    // transform: scale(1,1) rotateY(360deg);
+    // transition: 3s ease;
+    // animation-iteration-count: infinite;
+    box-shadow: rgba(255, 255, 255, 0.518) 0px 54px 55px, rgba(255, 255, 255, 0.518) 0px -12px 30px, rgba(255, 255, 255, 0.518) 0px 4px 6px, rgba(255, 255, 255, 0.518) 0px 12px 13px, rgba(255, 255, 255, 0.518) 0px -3px 5px;
+}
+
+.icon {
+    width: 6.7rem;
+    height: 7rem;
+}
+
+.framerIcon {
+    width: 5rem;
+    height: 6rem;
+}

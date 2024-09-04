@@ -1,0 +1,30 @@
+@use "sass:math";
+
+.text-animate {
+    display: inline-block;
+    opacity: 0;
+    animation: bounceIn 1s 1s;
+    // This enables to go in forward direction letter by letter 
+    animation-fill-mode: forwards;
+    min-width: 10px;
+}
+
+.text-animate-hover {
+    min-width: 10px;
+    display: inline-block;
+    animation-fill-mode: both;
+
+    &:hover {
+        animation: rubberBand 1s;
+        color: white;
+        transition: all 250ms ease-in-out;
+    }
+}
+
+//This part is for arrival of letters one by one as you load
+@for $i from 1 through 35 {
+    // the below underscore is put
+    .text-animate._#{$i} {
+        animation-delay: #{$i/10}s;
+    }
+}
