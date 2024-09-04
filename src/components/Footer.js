@@ -72,9 +72,9 @@ const Footer = () => {
                     <span className="on">ON</span>
                     <div className="social-icons">
                         <span className='social-icon'><FaArrowRight /></span>
-                        <a href="https://github.com/Aaryan-02" target="_blank" className="social-icon"><FaGithub className="fab" /></a>
-                        <a href="https://www.linkedin.com/in/aaryan-pinto/" target="_blank" className="social-icon"><FaLinkedinIn className="fab" /></a>
-                        <a href="https://www.instagram.com/aryan_p_02/" target="_blank" className="social-icon"><FaInstagram className="fab" /></a>
+                        <a href="https://github.com/Aaryan-02" target="_blank" rel="noreferrer" className="social-icon"><FaGithub className="fab" /></a>
+                        <a href="https://www.linkedin.com/in/aaryan-pinto/" target="_blank" rel="noreferrer" className="social-icon"><FaLinkedinIn className="fab" /></a>
+                        <a href="https://www.instagram.com/aryan_p_02/" target="_blank" rel="noreferrer" className="social-icon"><FaInstagram className="fab" /></a>
                     </div>
                 </motion.article>
                 <motion.div className="copyright" variants={slideInFromBottom(30, 0.4)}
