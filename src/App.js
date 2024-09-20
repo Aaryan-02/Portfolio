@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 import Menu from "./components/Menu";
-import Home from "./components/Home";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Skills from "./pages/Skills";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
