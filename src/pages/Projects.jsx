@@ -1,8 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from "framer-motion";
 import { slideInFromLeft, slideInFromTop, slideInFromRight } from '../utils/Animations.js';
-import $ from 'jquery';
+// import $ from 'jquery';
 import { ProjectData } from '../assets/data.js';
+
+
+import {Swiper, SwiperSlide} from 'swiper/react';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from 'swiper/modules';
+// import "../styles/projects.scss";
 
 export function ProjectCard({ imageSrc, title, description, visitURL }) {
   return (
@@ -26,43 +34,11 @@ export function ProjectCard({ imageSrc, title, description, visitURL }) {
 }
 
 const Projects = () => {
-  $.fn.commentCards = function () {
-    return this.each(function () {
-
-      var $this = $(this),
-        $cards = $this.find('.card'),
-        $current = $cards.filter('.card--current'),
-        $next;
-
-      $cards.on('click', function () {
-        if (!$current.is(this)) {
-          $cards.removeClass('card--current card--out card--next');
-          $current.addClass('card--out');
-          $current = $(this).addClass('card--current');
-          $next = $current.next();
-          $next = $next.length ? $next : $cards.first();
-          $next.addClass('card--next');
-        }
-      });
-      if (!$current.length) {
-        $current = $cards.last();
-        $cards.first().trigger('click');
-      }
-      $this.addClass('cards--active');
-    })
-
-  };
-  
-  // Jquery and React don't go well together since both are working on DOM and React overshadows the DOM. So to make use of it we have to simply use useEffect hook and with this the jQuery function would be called on load
-  useEffect(() => {
-    $('.cards').commentCards();
-  })
-
 
   return (
-    <>
-      <div id="projectSection">
-        <motion.div className="sectionHeader"
+    <div id="projectSection">
+      <motion.div className="sectionHeader"
+          // style={{padding: '2.5rem'}}
           variants={slideInFromTop(-45, 0.5)}
           initial="initial"
           whileInView="animate"
@@ -79,40 +55,129 @@ const Projects = () => {
           viewport={{
             once: true,
           }}
-        >
-          <div class="wrapper">
-            <div class="marquee">
-              <p> Click on the Next Card. </p>
-              <p> Click on the Next Card. </p>
-              <p> Click on the Next Card. </p>
-              <p> Click on the Next Card. </p>
-              <p> Click on the Next Card. </p>
-            </div>
-          </div>
-          {/* <div className='downArrow'>
-            <span><FaArrowCircleDown /></span>
-          </div> */}
-        </motion.div>
-        <div id="projects">
-          <motion.ul className="cards"
-            variants={slideInFromLeft(-45, 0.5)}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
+        ></motion.div>
+    <main id='project-sliders'>
+      <div className='project-container'>
+      <div className="swiper-button-prev"></div>
+          <Swiper
+            modules={[Pagination, Navigation]}
+            grabCursor={true}
+            initialSlide={2}
+            centeredSlides={true}
+            slidesPerView="auto"
+            speed={800}
+            slideToClickedSlide={true}
+            pagination={{el : ".swiper-pagination", clickable: true}}
+            navigation={{
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            }}
+            breakpoints={{
+              320: {spaceBetween: 40},
+              430: {spaceBetween: 50},
+              580: {spaceBetween: 70},
+              650: {spaceBetween: 30},
             }}
           >
-            {ProjectData.map((item) => (
-              <ProjectCard key={item.title} {...item} />
+            {ProjectData.map((project, index) => (
+              <SwiperSlide key={index} className={`swiper-slide slide-${index + 1}`}>
+                <div className="title">
+                <h1>{project.title}</h1>
+              </div>
+              <div className="content">
+                <div className="text">
+                  <h2>{project.title}</h2>
+                  <p dangerouslySetInnerHTML={{ __html: project.description }}></p>
+                </div>
+                <div className="genre">
+                <a style={{ "--i": 1}} className='visit' href={project.visitURL} target="_blank" rel="noreferrer">Visit Project</a>
+                </div>
+              </div>
+              </SwiperSlide>
             ))}
-          </motion.ul>
-        </div>
+            <div className="swiper-pagination"></div>
+          </Swiper>
+            <div className="swiper-button-next"></div>
       </div>
-    </>
+    </main>
+    </div>
   )
 }
 
 export default Projects;
+
+{/* <SwiperSlide className='swiper-slide slide-1'>
+              
+              
+            </SwiperSlide>
+            <SwiperSlide className='swiper-slide slide-2'>
+              <div className="title">
+                <h1>Bear</h1>
+              </div>
+              <div className="content">
+                <div className="text">
+                  <h2>The Bear</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sint explicabo ut nemo adipisci rerum ea iusto, provident, inventore natus delectus? Aperiam nobis dolores aut recusandae iusto. Veritatis, repellendus eaque culpa expedita, quas, laboriosam fugit mollitia adipisci magni ea sapiente aut unde assumenda et quo veniam tenetur minima labore eum qui vel. Eum obcaecati nihil eius alias, consequatur enim inventore voluptatibus, quaerat harum delectus culpa fuga odit perferendis deserunt. Esse?
+                  </p>
+                </div>
+                <div className="genre">
+                  <span style={{ "--i": 1}}>Drama</span>
+                  <span style={{ "--i": 2}}>Comedy</span>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className='swiper-slide slide-3'>
+              <div className="title">
+                <h1>Bear</h1>
+              </div>
+              <div className="content">
+                <div className="text">
+                  <h2>The Bear</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sint explicabo ut nemo adipisci rerum ea iusto, provident, inventore natus delectus? Aperiam nobis dolores aut recusandae iusto. Veritatis, repellendus eaque culpa expedita, quas, laboriosam fugit mollitia adipisci magni ea sapiente aut unde assumenda et quo veniam tenetur minima labore eum qui vel. Eum obcaecati nihil eius alias, consequatur enim inventore voluptatibus, quaerat harum delectus culpa fuga odit perferendis deserunt. Esse?
+                  </p>
+                </div>
+                <div className="genre">
+                  <span style={{ "--i": 1}}>Drama</span>
+                  <span style={{ "--i": 2}}>Comedy</span>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className='swiper-slide slide-4'>
+              <div className="title">
+                <h1>Bear</h1>
+              </div>
+              <div className="content">
+                <div className="text">
+                  <h2>The Bear</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sint explicabo ut nemo adipisci rerum ea iusto, provident, inventore natus delectus? Aperiam nobis dolores aut recusandae iusto. Veritatis, repellendus eaque culpa expedita, quas, laboriosam fugit mollitia adipisci magni ea sapiente aut unde assumenda et quo veniam tenetur minima labore eum qui vel. Eum obcaecati nihil eius alias, consequatur enim inventore voluptatibus, quaerat harum delectus culpa fuga odit perferendis deserunt. Esse?
+                  </p>
+                </div>
+                <div className="genre">
+                  <span style={{ "--i": 1}}>Drama</span>
+                  <span style={{ "--i": 2}}>Comedy</span>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className='swiper-slide slide-5'>
+              <div className="title">
+                <h1>Bear</h1>
+              </div>
+              <div className="content">
+                <div className="text">
+                  <h2>The Bear</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sint explicabo ut nemo adipisci rerum ea iusto, provident, inventore natus delectus? Aperiam nobis dolores aut recusandae iusto. Veritatis, repellendus eaque culpa expedita, quas, laboriosam fugit mollitia adipisci magni ea sapiente aut unde assumenda et quo veniam tenetur minima labore eum qui vel. Eum obcaecati nihil eius alias, consequatur enim inventore voluptatibus, quaerat harum delectus culpa fuga odit perferendis deserunt. Esse?
+                  </p>
+                </div>
+                <div className="genre">
+                  <span style={{ "--i": 1}}>Drama</span>
+                  <span style={{ "--i": 2}}>Comedy</span>
+                </div>
+              </div>
+            </SwiperSlide> */}
 
 // <ul className = "cards" >
 //           <ProjectCard {...ProjectData[0]} />
