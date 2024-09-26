@@ -63,7 +63,7 @@ const About = () => {
             >
                 <div className="row">
                     <div className="info-item">
-                        <p>Age: <span>20</span></p>
+                        <p>Age: <span>22</span></p>
                     </div>
                     <div className="info-item">
                         <p>City: <span> Pune</span></p>

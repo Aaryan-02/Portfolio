@@ -20,12 +20,6 @@ import framer from "../assets/tech-icons/framer.png";
 
 export const ProjectData = [
     {
-        title: "Chat Application",
-        description: "Snappy is a real-time chat application developed using the <b>MERN</b> stack, enabling instant messaging and communication between users. It facilitates seamless and interactive conversations in a user-friendly interface backed by a MongoDB database and powered by <b>ExpressJS</b> and <b>Node.js</b>.",
-        imageSrc: chatApp,
-        visitURL: "https://github.com/Aaryan-02/Chat-app"
-    },
-    {
         title: "YouTube Clone",
         description: "Developed a YouTube Clone using <b>ReactJS and YouTube API</b> that provides users with a familiar and intuitive interface similar to the popular video-sharing platform, YouTube. By integrating the YouTube API, the clone fetches and displays real-time data from YouTube's vast collection of videos.",
         imageSrc: youtube,
@@ -36,6 +30,12 @@ export const ProjectData = [
         description: "Developed a Google Clone using <b>ReactJS, Tailwind CSS and the Google API</b> that closely resembles the layout and design of the original Google search page. The clone is also responsive and adapts to different screen sizes, ensuring a seamless experience across devices.",
         imageSrc: google,
         visitURL: "https://aaryan-pinto-google-search-app.netlify.app/"
+    },
+    {
+        title: "Chat Application",
+        description: "Snappy is a real-time chat application developed using the <b>MERN</b> stack, enabling instant messaging and communication between users. It facilitates seamless and interactive conversations in a user-friendly interface backed by a MongoDB database and powered by <b>ExpressJS</b> and <b>Node.js</b>.",
+        imageSrc: chatApp,
+        visitURL: "https://github.com/Aaryan-02/Chat-app"
     },
     {
         title: "News Monkey",
