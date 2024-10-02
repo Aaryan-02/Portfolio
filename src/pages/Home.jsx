@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import me from "../assets/myself.png";
+import me from "../assets/image.png";
 import Typewriter from 'typewriter-effect';
 import About from "./About.jsx";
 import Skills from "./Skills.jsx";
@@ -18,7 +18,7 @@ import resume from "../assets/Documents/Resume.pdf";
 
 const Home = () => {
 
-  const nameArray = ['a', 'r', 'y', 'a', 'n', ' ', 'P', 'i', 'n', 't', 'o'];
+  const nameArray = ['a', 'r', 'y', 'a', 'n', ' ', ' ', 'P', 'i', 'n', 't', 'o'];
 
   const [letterClass, setLetterClass] = useState('text-animate');
 
