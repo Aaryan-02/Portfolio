@@ -1,7 +1,7 @@
 // Project images
 import chatApp from "./project-imgs/snappyChat.jpg";
 import youtube from "./project-imgs/youtube.png";
-import google from "./project-imgs/g.png";
+import google from "./project-imgs/google.png";
 import text from "./project-imgs/text.png";
 import extension from "./project-imgs/extension.jpg";
 import newsMonkey from "./project-imgs/news-monkey.png";
@@ -76,26 +76,25 @@ export const aboutData = [
     {
         date: "2017 - 2018",
         title: "St. Patrick's School",
-        course: "S.S.C."
+        course: "S.S.C.",
+        type: "education"
     },
     {
-        date: "25/02/2023 - 25/03/2023",
-        title: "Cascode",
-        course: "Web Development"
+        date: "07/2024 - Present",
+        title: "NewOwl AI",
+        course: "Frontend Developer",
+        type: "experience"
     },
     {
         date: "2019 - 2020",
         title: "St. Vincent's College",
-        course: "H.S.C."
-    },
-    {
-        date: "05/03/2023 - 05/04/2023",
-        title: "SYNC Intern",
-        course: "Software Development"
+        course: "H.S.C.",
+        type: "education"
     },
     {
         date: "2021 - 2024",
         title: "SAE, Kondhawa",
-        course: "BTECH in Computer Engineering"
+        course: "BTECH in Computer Engineering",
+        type: "education"
     }
 ];
