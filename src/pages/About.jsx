@@ -31,7 +31,7 @@ const About = () => {
                     </motion.p>
                 </div>
                 <div className="abtRight" >
-                    <motion.div className="eduExp" variants={slideInFromRight(40, 0.5)} initial="initial"
+                    {/* <motion.div className="eduExp" variants={slideInFromRight(40, 0.5)} initial="initial"
                         whileInView="animate"
                         viewport={{
                             once: true,
@@ -39,7 +39,7 @@ const About = () => {
                     >
                         <h2>Education</h2>
                         <h2>Experience</h2>
-                    </motion.div>
+                    </motion.div> */}
                     <Timeline />
                 </div>
                 <div style={{ clear: "both" }}></div>
