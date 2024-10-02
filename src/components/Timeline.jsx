@@ -7,7 +7,7 @@ const Timeline = () => {
     const educationData = aboutData.filter(item => item.type === "education");
     const experienceData = aboutData.filter(item => item.type === "experience");
     return (
-        <motion.div id='timeline' variants={slideInFromRight(40, 0.8)} initial="initial"
+        <motion.div id='timeline' variants={slideInFromRight(40, 0.5)} initial="initial"
             whileInView="animate"
             viewport={{
                 once: true,
