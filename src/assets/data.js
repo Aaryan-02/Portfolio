@@ -16,7 +16,7 @@ import mongodb from "../assets/tech-icons/icons8-mongodb-96.png";
 import mysql from "../assets/tech-icons/icons8-mysql-logo-96.png";
 import bootstrap from "../assets/tech-icons/icons8-bootstrap-96.png";
 import sass from "../assets/tech-icons/icons8-sass-96.png";
-import framer from "../assets/tech-icons/framer.png";
+import git from "../assets/tech-icons/git.png";
 
 export const ProjectData = [
     {
@@ -64,13 +64,12 @@ export const skillData = [
     { name: 'CSS', icon: css },
     { name: 'JavaScript', icon: js },
     { name: 'ReactJS', icon: react },
-    { name: 'MongoDB', icon: mongodb },
+    { name: 'Git', icon: git },
     { name: 'MySQL', icon: mysql },
+    { name: 'MongoDB', icon: mongodb },
     { name: 'BootStrap', icon: bootstrap },
     { name: 'SASS', icon: sass },
-    { name: 'Framer', icon: framer },
 ];
-
 
 export const aboutData = [
     {
@@ -93,7 +92,7 @@ export const aboutData = [
     },
     {
         date: "2021 - 2024",
-        title: "SAE, Kondhawa",
+        title: "SAE, Pune",
         course: "BTECH in Computer Engineering",
         type: "education"
     }
