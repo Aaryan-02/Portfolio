@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-around;
     margin-left: 2rem;
-    margin-top: 6rem;
+    margin-top: 5.5rem;
 }
 
 .info {
@@ -24,7 +24,7 @@
     justify-content: center;
     flex-direction: column;
     margin-left: -2rem;
-    margin-top: 1rem;
+    margin-top: 0.7rem;
 }
 
 .hi {
@@ -81,10 +81,10 @@
 }
 
 #myImg {
-    width: 26vmax;
+    width: 25vmax;
     object-fit: contain;
     margin-left: -70px;
-    border-radius: 50%;
+    border-radius: 50px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     animation: pulse 2s infinite ease-in-out;
