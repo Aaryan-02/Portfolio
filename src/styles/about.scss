@@ -72,6 +72,7 @@
     background-color: aqua;
     color: #e31b6d;
     border-radius: 15px;
+    padding: 10px;
 }
 
 .projectsDone .number {
@@ -92,11 +93,11 @@
 
 .row {
     display: flex;
-    // justify-content: space-around;
 }
+
 .info-item p {
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 1rem 0;
     border-top: 0.1rem solid #e31b6d;
     border-bottom: 0.1rem solid #e31b6d;

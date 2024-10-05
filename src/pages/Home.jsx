@@ -11,22 +11,29 @@ import { slideInFromLeft, imgVariant } from '../utils/Animations.js';
 // import Cursor from './Cursor';
 
 import Particle from '../utils/ParticlesBackground.js';
-import { FaFileDownload } from 'react-icons/fa';
+import { MdDownload } from "react-icons/md";
 import resume from "../assets/Documents/Resume.pdf";
+import { Document, Page } from 'react-pdf';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
 
 
 
 const Home = () => {
 
   const nameArray = ['a', 'r', 'y', 'a', 'n', ' ', ' ', 'P', 'i', 'n', 't', 'o'];
-
   const [letterClass, setLetterClass] = useState('text-animate');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 4000)
   }, [])
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <>
       {/* <Cursor /> */}
@@ -53,7 +60,9 @@ const Home = () => {
                     fill='cyan' />
                 </svg>
               </span>
-              <span><Blast letterClass={letterClass} arrayStr={nameArray} indexLetter={18} /></span>
+              <span>
+                <Blast letterClass={letterClass} arrayStr={nameArray} indexLetter={18} />
+              </span>
             </motion.div>
             <motion.div variants={slideInFromLeft(-100, 1.1)} initial="initial" animate="animate">
               <Typewriter options={{
@@ -65,7 +74,8 @@ const Home = () => {
               }} />
             </motion.div>
             <motion.div className='downloadBtn' variants={slideInFromLeft(-100, 1.2)} initial="initial" animate="animate">
-              <a href={resume} download="resume" >Download CV <span> <FaFileDownload /></span></a>
+              {/* <a href={resume} download="resume" >Check Resume<span> <FaFileDownload /></span></a> */}
+              <button onClick={openModal} >Check Resume</button>
             </motion.div>
           </div>
           <motion.div className="pic" variants={imgVariant(500)} initial="initial" animate="animate">
@@ -73,6 +83,27 @@ const Home = () => {
           </motion.div>
         </section>
       </div>
+
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <span className='modal-title'>Resume
+                <a href={resume} download="resume" className='downloadIcon'>
+                  <MdDownload style={{ color: "#920505", marginBottom: "-5px" }} />
+                </a>
+              </span>
+              <span className="close-modal" onClick={closeModal}>&times;</span>
+            </div>
+            <div className="modal-pdf">
+              <Document file={resume}>
+                <Page pageNumber={1} renderTextLayer={false} renderAnnotationLayer={false} />
+              </Document>
+            </div>
+          </div>
+        </div>
+      )}
+
       <About />
       <Skills />
       <Projects />
