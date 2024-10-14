@@ -54,7 +54,7 @@ function App() {
           border: '3px solid rgb(255 158 185)',
           // backgroundColor: 'rgba(252 235 240)',
           zIndex: "999999",
-          boxShadow: '0 0 15px rgba(255 158 185 0.2)',
+          boxShadow: '0 0 15px rgb(255 158 185)',
         }}
       />
       {isMobile ? (
