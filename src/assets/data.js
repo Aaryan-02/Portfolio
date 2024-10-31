@@ -35,7 +35,7 @@ export const ProjectData = [
         title: "Chat Application",
         description: "Snappy is a real-time chat application developed using the <b>MERN</b> stack, enabling instant messaging and communication between users. It facilitates seamless and interactive conversations in a user-friendly interface backed by a MongoDB database and powered by <b>ExpressJS</b> and <b>Node.js</b>.",
         imageSrc: chatApp,
-        visitURL: "https://github.com/Aaryan-02/Chat-app"
+        visitURL: "https://snappy-chat-application.netlify.app/"
     },
     {
         title: "News Monkey",
