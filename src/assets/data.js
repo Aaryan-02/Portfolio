@@ -38,6 +38,14 @@ export const ProjectData = [
         visitURL: "https://snappy-chat-application.netlify.app/"
     },
     {
+        title: "Admin Dashboard",
+        description: "Developed a <b>ReactJS</b> admin dashboard featuring a dashboard, calendar, kanban board, and user table, leveraging <b>Zustand</b> for state management, <b>React ECharts</b> for analytics, and <b>FullCalendar</b> & <b>Kanban</b> for streamlined scheduling and task management.",
+        imageSrc: chatApp,
+        visitURL: "https://admin-dashboard-aaryan.netlify.app/"
+    },
+
+
+    {
         title: "News Monkey",
         description: "Designed with <b>ReactJS</b>, the News Application features a modern and intuitive user interface that allows users to easily navigate and access news articles. Users can explore news articles across different categories such as business, technology, sports, and more.",
         imageSrc: newsMonkey,
